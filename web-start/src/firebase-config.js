@@ -7,7 +7,12 @@
  * 4. Copy the config object snippet, then add it here.
  */
 const config = {
-  /* TODO: ADD YOUR FIREBASE CONFIGURATION OBJECT HERE */
+  apiKey: "AIzaSyDC1eqLs7n_e8-IhAVR6IfRnxDpGnKTcP8",
+  authDomain: "sugarfreeit.firebaseapp.com",
+  projectId: "sugarfreeit",
+  storageBucket: "sugarfreeit.appspot.com",
+  messagingSenderId: "870554272037",
+  appId: "1:870554272037:web:46e1c7115121fe42ca9acc"
 };
 
 export function getFirebaseConfig() {
