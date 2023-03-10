@@ -21,6 +21,7 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
 } from 'firebase/auth';
 import {
@@ -50,7 +51,8 @@ import { getFirebaseConfig } from './firebase-config.js';
 // Signs-in Friendly Chat.
 async function signIn() {
   var provider = new GoogleAuthProvider();
-  await signInWithPopup(getAuth(), provider);
+  //await signInWithPopup(getAuth(), provider);
+  await signInWithRedirect(getAuth(), provider);
 }
 
 // Signs-out of Friendly Chat.

@@ -6,13 +6,26 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "headers": [{
-      "source": "**",
-      "headers": [{
-          "key": "Cache-Control",
-          "value": "max-age=no-Cache"
-      }]
-  }]
+    "i18n": {
+      "root": "/localized-files"
+    },
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=no-Cache"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
   "firestore": {
     "rules": "firestore.rules",
@@ -37,5 +50,20 @@
     "ui": {
       "enabled": true
     }
-  }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ]
 }
